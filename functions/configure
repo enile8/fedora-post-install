@@ -28,6 +28,15 @@ function selinux {
 	configure
 }
 
+function gnome {
+        show_info 'Configuring Gnome extensions...'
+	URL='https://extensions.gnome.org/'
+        [[ -x $BROWSER ]] && exec "$BROWSER" "$URL"
+        path=$(which xdg-open || which gnome-open) && exec "$path" "$URL"
+        echo "Can't find browser"
+	configure
+}
+
 # Configure System
 function configure {
 	eval `resize`
@@ -39,6 +48,7 @@ function configure {
 		$LINES $COLUMNS $(( $LINES - 12 )) \
 		preferences	 'Set preferred application-specific settings' \
 		selinux		 'Put SELinux in permissive mode' \
+		gnome            'Gnome extensions' \
 		3>&1 1>&2 2>&3)
 	 
 	exitstatus=$?
