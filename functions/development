@@ -13,6 +13,10 @@ function development {
 		--scrolltext) then
 		show_info 'Installing...'
 		show_warning 'Requires root privileges'
+		
+		sudo dnf groupinstall 'Development Tools'
+                sudo dnf groupinstall 'C Development Tools and Libraries'
+		
 		# For loop for installing
 		for PACKAGE in $(cat $DEVTOOLS)
 		do
