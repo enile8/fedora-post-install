@@ -82,9 +82,22 @@ function repositories {
 		--ok-button "Install" \
 		--cancel-button "Go Back" \
 		$LINES $COLUMNS $(( $LINES - 12 )) \
-		'rpmfusion'		 'RPM Fusion' \
-		3>&1 1>&2 2>&3)
-	 
+		'rpmfusion'		            'RPM Fusion' \
+                'dockerrepo'                        'Docker Repository' \                     
+                '*fedora'                           'Fedora 23 - x86_64' \                    
+                '*fedora-source'                    'Fedora 23 - Source' \                    
+                'google-chrome'                     'google-chrome' \                            
+                'keybase'                           'keybase' \                                
+                'rpmfusion-free'                    'RPM Fusion for Fedora 23 - Free' \          
+                'rpmfusion-free-updates-testing'    'RPM Fusion for Fedora 23 - Free - Test' \   
+                'rpmfusion-nonfree'                 'RPM Fusion for Fedora 23 - Nonfree' \      
+                'rpmfusion-nonfree-updates-testing' 'RPM Fusion for Fedora 23 - Nonfree - Te' \  
+                '*updates'                          'Fedora 23 - x86_64 - Updates' \           
+                '*updates-source'                   'Fedora 23 - Updates Source' \  
+                '*rawhide'                          'Fedora - Rawhide - Developmental packages for the next Fedora release' \
+                '*rpmfusion-free-rawhide'           'RPM Fusion for Fedora Rawhide - Free' \
+                '*rpmfusion-nonfree-rawhide'        'RPM Fusion for Fedora Rawhide - Nonfree' \
+	        3>&1 1>&2 2>&3)
 	exitstatus=$?
 	if [ $exitstatus = 0 ]; then
 		$REPOS
