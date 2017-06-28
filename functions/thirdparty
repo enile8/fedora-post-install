@@ -3,7 +3,6 @@
 dir="$(dirname "$0")"
 
 source $dir/functions/third-party/dropbox
-source $dir/functions/third-party/google-chrome
 source $dir/functions/third-party/minecraft
 source $dir/functions/third-party/oracle-java
 source $dir/functions/third-party/rvm
@@ -21,7 +20,6 @@ function thirdparty {
 		--cancel-button "Go Back" \
 		$LINES $COLUMNS $(( $LINES - 12 )) \
 		'dropbox'			'Dropbox' \
-		'google-chrome'		'Google Chrome' \
 		'minecraft'			'Minecraft' \
 		'oracle-java'		'Oracle Java' \
 		'rvm'				'Ruby Version Manager (RVM)' \
